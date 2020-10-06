@@ -1,0 +1,77 @@
+version: '2'
+services:
+ hms:
+  image: cybershelby/persistencexss:47841
+  command: /bin/bash -c "service apache2 start; service mysql start; tail -f /dev/null"
+  ports:
+   - "8092:80"
+ fms:
+  image: cybershelby/persistencexss:48635
+  command: /bin/bash -c "service apache2 start; service mysql start; tail -f /dev/null"
+  ports:
+   - "8093:80"
+ blogcms:
+  image: cybershelby/sql:45763
+  command: /bin/bash -c "service apache2 start; service mysql start; tail -f /dev/null"
+  ports:
+   - "8095:80"
+ parlourauth:
+  image: cybershelby/authenticationbypass:48605
+  command: /bin/bash -c "service apache2 start; service mysql start; tail -f /dev/null"
+  ports:
+   - "8094:80"
+ hotel_reserv:
+  image: cybershelby/authenticationbypass:46461
+  command: /bin/bash -c "service apache2 start; service mysql start; tail -f /dev/null"
+  ports:
+   - "8097:80"
+ online_sched:
+  image: cybershelby/authenticationbypass:48409
+  command: /bin/bash -c "service apache2 start; service mysql start; tail -f /dev/null"
+  ports:
+   - "8098:80"
+ online_shopsql:
+  image: cybershelby/sql:48383
+  command: /bin/bash -c "service apache2 start; service mysql start; tail -f /dev/null"
+  ports:
+   - "8099:80"
+ carparkauth:
+  image: cybershelby/authenticationbypass:48435
+  command: /bin/bash -c "service apache2 start; service mysql start; tail -f /dev/null"
+  ports:
+   - "8096:80"
+ online_sched_xss:
+  image: cybershelby/xss:48403
+  command: /bin/bash -c "service apache2 start; service mysql start; tail -f /dev/null"
+  ports:
+   - "8071:80"
+ farm_xss:
+  image: cybershelby/sql:48440
+  command: /bin/bash -c "service apache2 start; service mysql start; tail -f /dev/null"
+  ports:
+   - "8072:80"
+ wwwboard:
+  image: cybershelby/remote_password_disclosure:3065
+  command: /bin/bash -c "service apache2 start; service mysql start; tail -f /dev/null"
+  ports:
+   - "8030:80"
+ GLSH_lfi:
+  image: cybershelby/cross_site_scripting:4124
+  command: /bin/bash -c "service apache2 start; service mysql start; tail -f /dev/null"
+  ports:
+   - "8031:80"
+ GLSH_xss:
+  image: cybershelby/cross_site_scripting:4124
+  command: /bin/bash -c "service apache2 start; service mysql start; tail -f /dev/null"
+  ports:
+   - "8032:80"
+ phpvidz_xss:
+  image: cybershelby/xss:15606
+  command: /bin/bash -c "service apache2 start; service mysql start; tail -f /dev/null"
+  ports:
+   - "8033:80"
+ phpvidz_cred:
+  image: cybershelby/xss:15606
+  command: /bin/bash -c "service apache2 start; service mysql start; tail -f /dev/null"
+  ports:
+   - "8034:80"
